@@ -7,19 +7,14 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import javax.swing.JPanel;
 import java.util.HashMap;
-import java.lang.Math.*;
 
 public class Controller extends JPanel implements MouseMotionListener {
 
     @Override
-    public void mouseDragged(MouseEvent e) {
-
-    }
+    public void mouseDragged(MouseEvent e) { }
 
     @Override
-    public void mouseMoved(MouseEvent e) {
-
-    }
+    public void mouseMoved(MouseEvent e) { }
 
     class Pair {
         int x;
@@ -53,11 +48,11 @@ public class Controller extends JPanel implements MouseMotionListener {
             return y;
         }
 
-        public void setX(int x) {
+        void setX(int x) {
             this.x = x;
         }
 
-        public void setY(int y) {
+        void setY(int y) {
             this.y = y;
         }
 
@@ -87,7 +82,7 @@ public class Controller extends JPanel implements MouseMotionListener {
 
     private Controller() {
         addMouseListener(new MouseAdapter() {
-
+            @Override
             public void mouseClicked(MouseEvent mouseEvent){
                 int node = this.find(mouseEvent.getX() - rad/2, mouseEvent.getY() - rad/2);
 
@@ -168,9 +163,8 @@ public class Controller extends JPanel implements MouseMotionListener {
         });
     }
 
+    @Override
     public void paintComponent(Graphics g) {
-//        g.clearRect(0, 0, 1200, 900);
-
         if (lines.size() > 0) {
             for (Pair line : lines) {
                 g.setColor(Color.BLACK);
